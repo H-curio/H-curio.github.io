@@ -464,4 +464,138 @@ a:hover {
   width: 100%;
   max-height: 400px;
   object-fit: contain;
-  margin: 1.
+  margin: 1.2rem 0;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  transition: transform 0.3s;
+}
+
+.contact-link:hover {
+  transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+  text-align: center;
+  padding: 1.8rem;
+  background: #1e293b;
+  font-size: 1rem;
+}
+
+/* ===== WHATSAPP FLOAT (CIRCULAR CON EFECTO) ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 999;
+  animation: pulse 1.5s infinite;
+}
+
+.whatsapp-float i {
+  font-size: 1.5rem;
+}
+
+.whatsapp-float span {
+  display: none;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #128c7e;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  }
+
+  .whatsapp-float span {
+    display: inline;
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+    height: auto;
+  }
+
+  .hero-main {
+    margin-bottom: 2rem;
+  }
+
+  .hero-sidebar {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .main-header {
+    padding: 1.2rem;
+  }
+
+  .main-nav ul {
+    gap: 1.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+}
