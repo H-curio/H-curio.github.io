@@ -23,7 +23,19 @@ const data = {
       title: "Página Web para Empresa de Reformas",
       description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en Perú, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
       technologies: "HTML, CSS, JavaScript, Responsive Design",
-      link: "https://github.com/H-curio/reformas-web"
+      link: "https://h-curio.github.io/rserviciosbml/"
+    },
+    {
+      title: "app-Tiempo-con-APis",
+      description: "Aplicación full-stack desarrollada en el transcurso del curso de desarrollo de APIs.",
+      technologies: "JavaScript, APIs, HTML,CSS",
+      link: "https://github.com/H-curio/proyecto_conAPIs_tiempo.git"
+    },
+    {
+      title: "Diccionario de JavaScript",
+      description: "Aplicación Web desarrollada para los que desean incursionar en este mundo.",
+      technologies: "JavaScript, HTML , CSS, Bootstrap",
+      link: "En Proceso"
     },
     {
       title: "To-Do App",
@@ -31,12 +43,6 @@ const data = {
       technologies: "React, Context API, LocalStorage",
       link: "https://github.com/H-curio/todo-app"
     },
-    {
-      title: "Calculadora de IMC",
-      description: "Aplicación simple para calcular índice de masa corporal.",
-      technologies: "JavaScript, Bootstrap",
-      link: "https://github.com/H-curio/imc-calculator"
-    }
   ],
 
   certifications: [
@@ -375,4 +381,5 @@ window.addEventListener('load', () => {
   renderCertifications();
   renderContact();
   checkScroll();
+
 });
