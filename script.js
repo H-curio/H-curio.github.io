@@ -1,8 +1,5 @@
 // ========== CONFIGURACIÓN DE DATOS ==========
-// ✅ Todo está organizado por secciones. Para agregar más, solo copia un objeto y pégalo al final del array.
-
 const data = {
-  // ========== HABILIDADES ==========
   skills: [
     { icon: 'fab fa-html5', name: 'HTML5' },
     { icon: 'fab fa-css3-alt', name: 'CSS3' },
@@ -21,14 +18,6 @@ const data = {
     { icon: 'fas fa-mobile-alt', name: 'Reparación Móvil' }
   ],
 
-  // ========== PROYECTOS ==========
-  // 🔹 Para agregar un nuevo proyecto, copia un objeto como este y pégalo al final del array:
-  // {
-  //   title: "Nombre del Proyecto",
-  //   description: "Breve descripción",
-  //   technologies: "Tecnologías usadas",
-  //   link: "https://enlace.com"   // o null si está en proceso
-  // },
   projects: [
     {
       title: "Página Web para Empresa de Reformas",
@@ -46,7 +35,7 @@ const data = {
       title: "Diccionario de JavaScript",
       description: "Aplicación Web desarrollada para los que desean incursionar en este mundo.",
       technologies: "JavaScript, HTML, CSS, Bootstrap",
-      link: null  // En proceso → sin enlace
+      link: null
     },
     {
       title: "To-Do App",
@@ -54,19 +43,8 @@ const data = {
       technologies: "React, Context API, LocalStorage",
       link: "https://github.com/H-curio/todo-app"
     }
-    // 🔹 Agrega más proyectos aquí
   ],
 
-  // ========== CERTIFICACIONES ==========
-  // 🔹 Para agregar una nueva certificación, copia un objeto como este y pégalo al final del array:
-  // {
-  //   title: "Nombre del curso",
-  //   issuer: "Institución",
-  //   date: "Fecha",
-  //   image: "assets/certs/nombre-del-archivo.png",  // ← ¡debe coincidir exactamente con tu archivo!
-  //   skills: "Habilidades obtenidas",
-  //   verification: "Código o enlace de verificación (opcional)"
-  // },
   certifications: [
     {
       title: "Introduction to Cybersecurity",
@@ -189,10 +167,8 @@ const data = {
       image: "assets/certs/militar.jpg",
       skills: "Disciplina, trabajo en equipo, compromiso institucional."
     }
-    // 🔹 Agrega más certificaciones aquí
   ],
 
-  // ========== CONTACTO ==========
   contact: [
     { icon: '📧', text: 'liraacostamiguelangel@gmail.com', link: 'mailto:liraacostamiguelangel@gmail.com' },
     { icon: '💻', text: 'GitHub', link: 'https://github.com/H-curio' },
@@ -374,11 +350,6 @@ function initScrollToTop() {
   });
 }
 
-// Modo Oscuro (opcional)
-function initDarkMode() {
-  // Ya estás en modo oscuro, pero puedes agregar un toggle si lo deseas
-}
-
 // Validación de enlaces rotos (consola)
 function validateLinks() {
   const links = document.querySelectorAll('a[href^="http"]');
@@ -441,8 +412,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-
-
-
-
