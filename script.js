@@ -66,28 +66,28 @@ const data = {
       title: "Dominando NMAP: Escaneo de Redes",
       issuer: "Artistcode SAS",
       date: "6 de septiembre de 2025",
-      image: "assets/certs/#6edc2db421bace01600a0c33ef66c98 (1).png",
+      image: "assets/certs/#6edc2db421bace01600a0c33ef66c98(1).png",
       skills: "Escaneo de puertos y servicios, detección de sistemas operativos, escaneo agresivo vs pasivo, interpretación de resultados."
     },
     {
       title: "Penetration Testing: Estrategias y Técnicas",
       issuer: "Artistcode SAS",
       date: "6 de septiembre de 2025",
-      image: "assets/certs/#11b9b8a8b812e741d1ca2da7480e10b (1).png",
+      image: "assets/certs/#11b9b8a8b812e741d1ca2da7480e10b(1).png",
       skills: "Metodologías de pentesting, uso de herramientas como Nmap y Metasploit, análisis de vulnerabilidades, informes de seguridad."
     },
     {
       title: "Uso y Administración de Sistemas Linux",
       issuer: "Artistcode SAS",
       date: "6 de septiembre de 2025",
-      image: "assets/certs/#88df8bb4d705200129fef25106c2d56 (1).png",
+      image: "assets/certs/#88df8bb4d705200129fef25106c2d56(1).png",
       skills: "Comandos Linux, gestión de servicios, permisos de archivos, shell scripting."
     },
     {
       title: "Implementación y Optimización de Máquinas Virtuales",
       issuer: "Artistcode SAS",
       date: "6 de septiembre de 2025",
-      image: "assets/certs/#917c66a08996d0b464512c946e7f4e4 (1).png",
+      image: "assets/certs/#917c66a08996d0b464512c946e7f4e4(1).png",
       skills: "Virtualización, gestión de entornos virtuales, optimización de recursos."
     },
     {
@@ -101,14 +101,14 @@ const data = {
       title: "Dominando Termux V1",
       issuer: "Artistcode SAS",
       date: "6 de septiembre de 2025",
-      image: "assets/certs/#b10fb94713f4de3aab6b62b2a796487 (1).png",
+      image: "assets/certs/#b10fb94713f4de3aab6b62b2a796487(1).png",
       skills: "Termux como terminal en Android, instalación de herramientas de seguridad, automatización de tareas."
     },
     {
       title: "Extracción de Metadatos con FOCA",
       issuer: "Artistcode SAS",
       date: "6 de septiembre de 2025",
-      image: "assets/certs/#ef76edcb50c934bf51125418ef329e7 (1).png",
+      image: "assets/certs/#ef76edcb50c934bf51125418ef329e7(1).png",
       skills: "Extracción de metadatos, uso de FOCA, análisis forense digital, detección de información sensible."
     },
     {
@@ -396,6 +396,7 @@ window.addEventListener('load', () => {
   checkScroll();
 
 });
+
 
 
 
