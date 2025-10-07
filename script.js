@@ -19,31 +19,31 @@ const data = {
   ],
 
   projects: [
-    {
-      title: "Página Web para Empresa de Reformas",
-      description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en Perú, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
-      technologies: "HTML, CSS, JavaScript, Responsive Design",
-      link: "https://h-curio.github.io/rserviciosbml/"
-    },
-    {
-      title: "app-Tiempo-con-APis",
-      description: "Aplicación full-stack desarrollada en el transcurso del curso de desarrollo de APIs.",
-      technologies: "JavaScript, APIs, HTML,CSS",
-      link: "https://github.com/H-curio/proyecto_conAPIs_tiempo.git"
-    },
-    {
-      title: "Diccionario de JavaScript",
-      description: "Aplicación Web desarrollada para los que desean incursionar en este mundo.",
-      technologies: "JavaScript, HTML , CSS, Bootstrap",
-      link: "En Proceso"
-    },
-    {
-      title: "To-Do App",
-      description: "Aplicación full-stack para organizar tareas diarias.",
-      technologies: "React, Context API, LocalStorage",
-      link: "https://github.com/H-curio/todo-app"
-    },
-  ],
+  {
+    title: "Página Web para Empresa de Reformas",
+    description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en Perú, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
+    technologies: "HTML, CSS, JavaScript, Responsive Design",
+    link: "https://h-curio.github.io/rserviciosbml/"
+  },
+  {
+    title: "app-Tiempo-con-APis",
+    description: "Aplicación full-stack desarrollada en el transcurso del curso de desarrollo de APIs.",
+    technologies: "JavaScript, APIs, HTML, CSS",
+    link: "https://github.com/H-curio/proyecto_conAPIs_tiempo"
+  },
+  {
+    title: "Diccionario de JavaScript",
+    description: "Aplicación Web desarrollada para los que desean incursionar en este mundo.",
+    technologies: "JavaScript, HTML, CSS, Bootstrap",
+    link: //en proceso → sin enlace
+  },
+  {
+    title: "To-Do App",
+    description: "Aplicación full-stack para organizar tareas diarias.",
+    technologies: "React, Context API, LocalStorage",
+    link: "https://github.com/H-curio/todo-app"
+  }
+],
 
   certifications: [
     {
@@ -206,11 +206,24 @@ function renderProjects() {
   data.projects.forEach(project => {
     const card = document.createElement('div');
     card.className = 'project-card';
+    
+    let linkHtml = '';
+    if (project.link) {
+      // Si es un enlace a demo (como rserviciosbml), usa "Ver Demo"
+      if (project.link.includes('h-curio.github.io')) {
+        linkHtml = `<a href="${project.link}" target="_blank">Ver Demo</a>`;
+      } else {
+        linkHtml = `<a href="${project.link}" target="_blank">Ver en GitHub</a>`;
+      }
+    } else {
+      linkHtml = `<span style="color: #94a3b8;">En Proceso</span>`;
+    }
+
     card.innerHTML = `
       <h3>${project.title}</h3>
       <p>${project.description}</p>
       <p><strong>Tecnologías:</strong> ${project.technologies}</p>
-      <a href="${project.link}" target="_blank">Ver en GitHub</a>
+      ${linkHtml}
     `;
     container.appendChild(card);
   });
@@ -383,4 +396,5 @@ window.addEventListener('load', () => {
   checkScroll();
 
 });
+
 
