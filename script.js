@@ -21,7 +21,7 @@ const data = {
   projects: [
   {
     title: "Página Web para Empresa de Reformas",
-    description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en Perú, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
+    description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en España, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
     technologies: "HTML, CSS, JavaScript, Responsive Design",
     link: "https://h-curio.github.io/rserviciosbml/"
   },
@@ -396,5 +396,6 @@ window.addEventListener('load', () => {
   checkScroll();
 
 });
+
 
 
