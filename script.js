@@ -1,5 +1,8 @@
 // ========== CONFIGURACIÓN DE DATOS ==========
+// ✅ Todo está organizado por secciones. Para agregar más, solo copia un objeto y pégalo al final del array.
+
 const data = {
+  // ========== HABILIDADES ==========
   skills: [
     { icon: 'fab fa-html5', name: 'HTML5' },
     { icon: 'fab fa-css3-alt', name: 'CSS3' },
@@ -18,33 +21,52 @@ const data = {
     { icon: 'fas fa-mobile-alt', name: 'Reparación Móvil' }
   ],
 
+  // ========== PROYECTOS ==========
+  // 🔹 Para agregar un nuevo proyecto, copia un objeto como este y pégalo al final del array:
+  // {
+  //   title: "Nombre del Proyecto",
+  //   description: "Breve descripción",
+  //   technologies: "Tecnologías usadas",
+  //   link: "https://enlace.com"   // o null si está en proceso
+  // },
   projects: [
-  {
-    title: "Página Web para Empresa de Reformas",
-    description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en España, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
-    technologies: "HTML, CSS, JavaScript, Responsive Design",
-    link: "https://h-curio.github.io/rserviciosbml/"
-  },
-  {
-    title: "app-Tiempo-con-APis",
-    description: "Aplicación full-stack desarrollada en el transcurso del curso de desarrollo de APIs.",
-    technologies: "JavaScript, APIs, HTML, CSS",
-    link: "https://github.com/H-curio/proyecto_conAPIs_tiempo"
-  },
-  {
-    title: "Diccionario de JavaScript",
-    description: "Aplicación Web desarrollada para los que desean incursionar en este mundo.",
-    technologies: "JavaScript, HTML, CSS, Bootstrap",
-    link: //en proceso → sin enlace
-  },
-  {
-    title: "To-Do App",
-    description: "Aplicación full-stack para organizar tareas diarias.",
-    technologies: "React, Context API, LocalStorage",
-    link: "https://github.com/H-curio/todo-app"
-  }
-],
+    {
+      title: "Página Web para Empresa de Reformas",
+      description: "Desarrollé una página web institucional para una empresa de reformas domiciliarias en España, cuyo cliente final incluye colaboraciones con Leroy Merlin.",
+      technologies: "HTML, CSS, JavaScript, Responsive Design",
+      link: "https://h-curio.github.io/rserviciosbml/"
+    },
+    {
+      title: "app-Tiempo-con-APis",
+      description: "Aplicación full-stack desarrollada en el transcurso del curso de desarrollo de APIs.",
+      technologies: "JavaScript, APIs, HTML, CSS",
+      link: "https://github.com/H-curio/proyecto_conAPIs_tiempo"
+    },
+    {
+      title: "Diccionario de JavaScript",
+      description: "Aplicación Web desarrollada para los que desean incursionar en este mundo.",
+      technologies: "JavaScript, HTML, CSS, Bootstrap",
+      link: null  // En proceso → sin enlace
+    },
+    {
+      title: "To-Do App",
+      description: "Aplicación full-stack para organizar tareas diarias.",
+      technologies: "React, Context API, LocalStorage",
+      link: "https://github.com/H-curio/todo-app"
+    }
+    // 🔹 Agrega más proyectos aquí
+  ],
 
+  // ========== CERTIFICACIONES ==========
+  // 🔹 Para agregar una nueva certificación, copia un objeto como este y pégalo al final del array:
+  // {
+  //   title: "Nombre del curso",
+  //   issuer: "Institución",
+  //   date: "Fecha",
+  //   image: "assets/certs/nombre-del-archivo.png",  // ← ¡debe coincidir exactamente con tu archivo!
+  //   skills: "Habilidades obtenidas",
+  //   verification: "Código o enlace de verificación (opcional)"
+  // },
   certifications: [
     {
       title: "Introduction to Cybersecurity",
@@ -167,8 +189,10 @@ const data = {
       image: "assets/certs/militar.jpg",
       skills: "Disciplina, trabajo en equipo, compromiso institucional."
     }
+    // 🔹 Agrega más certificaciones aquí
   ],
 
+  // ========== CONTACTO ==========
   contact: [
     { icon: '📧', text: 'liraacostamiguelangel@gmail.com', link: 'mailto:liraacostamiguelangel@gmail.com' },
     { icon: '💻', text: 'GitHub', link: 'https://github.com/H-curio' },
@@ -178,47 +202,40 @@ const data = {
 };
 
 // ========== CONFIGURACIÓN EDITABLE ==========
-// Puedes cambiar estos valores en cualquier momento
 const config = {
-  certificationDate: new Date('2026-02-04T00:00:00'), // Fecha de certificación
+  certificationDate: new Date('2026-02-04T00:00:00'),
   progress: {
-    percent: 78,      // Cambia este número
-    projects: 3       // Cambia este número
+    percent: 78,
+    projects: 3
   }
 };
 
-// ========== RENDERIZADO DE CONTENIDO ==========
+// ========== FUNCIONES DE RENDERIZADO ==========
 function renderSkills() {
   const container = document.getElementById('skills-container');
+  if (!container) return;
+  container.innerHTML = '';
   data.skills.forEach(skill => {
     const card = document.createElement('div');
     card.className = 'skill-card';
-    card.innerHTML = `
-      <i class="${skill.icon}"></i>
-      <div>${skill.name}</div>
-    `;
+    card.innerHTML = `<i class="${skill.icon}"></i><div>${skill.name}</div>`;
     container.appendChild(card);
   });
 }
 
 function renderProjects() {
   const container = document.getElementById('projects-container');
+  if (!container) return;
+  container.innerHTML = '';
   data.projects.forEach(project => {
     const card = document.createElement('div');
     card.className = 'project-card';
+    let linkHtml = project.link 
+      ? (project.link.includes('h-curio.github.io') 
+          ? `<a href="${project.link}" target="_blank">Ver Demo</a>`
+          : `<a href="${project.link}" target="_blank">Ver en GitHub</a>`)
+      : `<span class="in-progress">En Proceso</span>`;
     
-    let linkHtml = '';
-    if (project.link) {
-      // Si es un enlace a demo (como rserviciosbml), usa "Ver Demo"
-      if (project.link.includes('h-curio.github.io')) {
-        linkHtml = `<a href="${project.link}" target="_blank">Ver Demo</a>`;
-      } else {
-        linkHtml = `<a href="${project.link}" target="_blank">Ver en GitHub</a>`;
-      }
-    } else {
-      linkHtml = `<span style="color: #94a3b8;">En Proceso</span>`;
-    }
-
     card.innerHTML = `
       <h3>${project.title}</h3>
       <p>${project.description}</p>
@@ -231,6 +248,8 @@ function renderProjects() {
 
 function renderCertifications() {
   const container = document.getElementById('certs-container');
+  if (!container) return;
+  container.innerHTML = '';
   data.certifications.forEach(cert => {
     const card = document.createElement('div');
     card.className = 'cert-card';
@@ -246,21 +265,68 @@ function renderCertifications() {
 
 function renderContact() {
   const container = document.getElementById('contact-links');
+  if (!container) return;
+  container.innerHTML = '';
   data.contact.forEach(item => {
     const link = document.createElement('div');
     link.className = 'contact-link';
-    if (item.link) {
-      link.innerHTML = `<span>${item.icon}</span> <a href="${item.link}" target="_blank">${item.text}</a>`;
-    } else {
-      link.innerHTML = `<span>${item.icon}</span> ${item.text}`;
-    }
+    link.innerHTML = item.link 
+      ? `<span>${item.icon}</span> <a href="${item.link}" target="_blank">${item.text}</a>`
+      : `<span>${item.icon}</span> ${item.text}`;
     container.appendChild(link);
   });
 }
 
-// ========== ACTUALIZAR STATUS ==========
-document.getElementById('progress-percent').textContent = config.progress.percent;
-document.getElementById('projects-completed').textContent = config.progress.projects;
+// ========== MODAL DE CERTIFICADOS ==========
+function openModal(cert) {
+  document.getElementById('modal-title').textContent = cert.title;
+  document.getElementById('modal-details').innerHTML = 
+    `<strong>Institución:</strong> ${cert.issuer}<br><strong>Fecha:</strong> ${cert.date}`;
+  document.getElementById('modal-cert-image').src = cert.image;
+  document.getElementById('modal-skills').innerHTML = 
+    `<strong>Habilidades obtenidas:</strong><br>${cert.skills}`;
+  document.getElementById('modal-verification').innerHTML = cert.verification || '';
+  document.getElementById('certModal').style.display = 'block';
+}
+
+// ========== TERMINAL ANIMADO (CORREGIDO) ==========
+function initTerminal() {
+  const terminalText = document.getElementById('terminal-text');
+  if (!terminalText) return;
+
+  const lines = [
+    "> npm run dev",
+    "> Building project...",
+    "> Success! Server running at http://localhost:3000",
+    "> Welcome, Miguel Angel.",
+    "> Your mission: Build secure, user-centered software.",
+    ""
+  ];
+
+  let currentLineIndex = 0;
+  let currentCharIndex = 0;
+
+  function typeLine() {
+    if (currentCharIndex <= lines[currentLineIndex].length) {
+      terminalText.textContent = lines.slice(0, currentLineIndex).join('\n') + '\n' + lines[currentLineIndex].substring(0, currentCharIndex);
+      currentCharIndex++;
+      setTimeout(typeLine, 50);
+    } else {
+      setTimeout(() => {
+        currentLineIndex = (currentLineIndex + 1) % lines.length;
+        currentCharIndex = 0;
+        if (currentLineIndex === 0) {
+          terminalText.textContent = "";
+          setTimeout(typeLine, 1000);
+        } else {
+          typeLine();
+        }
+      }, 1000);
+    }
+  }
+
+  typeLine();
+}
 
 // ========== CONTADOR DE TIEMPO ==========
 function updateCountdown() {
@@ -283,120 +349,98 @@ function updateCountdown() {
   document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
-// Actualizar contador cada segundo
-setInterval(updateCountdown, 1000);
-updateCountdown(); // Ejecutar inmediatamente
+// ========== FUNCIONES ADICIONALES ÚTILES ==========
 
-// ========== EFECTO DE TERMINAL ESCRIBIENDO ========
-const terminalText = document.getElementById('terminal-text');
-const lines = [
-  "> npm run dev",
-  "> Building project...",
-  "> Success! Server running at http://localhost:3000",
-  "> Welcome, Miguel Angel.",
-  "> Your mission: Build secure, user-centered software.",
-  ""
-];
+// Botón de Scroll to Top
+function initScrollToTop() {
+  const btn = document.createElement('button');
+  btn.id = 'scrollToTop';
+  btn.innerHTML = '↑';
+  btn.style.cssText = `
+    position: fixed; bottom: 80px; right: 20px; 
+    background: #3b82f6; color: white; border: none; 
+    width: 40px; height: 40px; border-radius: 50%; 
+    cursor: pointer; font-size: 18px; display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  `;
+  document.body.appendChild(btn);
 
-let currentLineIndex = 0;
-let currentCharIndex = 0;
-let isTyping = true;
-
-function typeLine() {
-  if (isTyping) {
-    if (currentCharIndex <= lines[currentLineIndex].length) {
-      terminalText.textContent = lines.slice(0, currentLineIndex).join('\n') + '\n' + lines[currentLineIndex].substring(0, currentCharIndex);
-      currentCharIndex++;
-      setTimeout(typeLine, 50); // Velocidad de escritura
-    } else {
-      // Línea completa, esperar un poco
-      setTimeout(() => {
-        currentLineIndex++;
-        currentCharIndex = 0;
-        if (currentLineIndex >= lines.length) {
-          // Reiniciar
-          currentLineIndex = 0;
-          terminalText.textContent = "";
-          setTimeout(typeLine, 1000); // Esperar 1 segundo antes de reiniciar
-        } else {
-          typeLine();
-        }
-      }, 1000); // Esperar 1 segundo entre líneas
-    }
-  }
-}
-
-// Iniciar el efecto de terminal
-typeLine();
-
-// ========== MODAL ==========
-function openModal(cert) {
-  document.getElementById('modal-title').textContent = cert.title;
-  document.getElementById('modal-details').innerHTML = 
-    `<strong>Institución:</strong> ${cert.issuer}<br><strong>Fecha:</strong> ${cert.date}`;
-  document.getElementById('modal-cert-image').src = cert.image;
-  document.getElementById('modal-skills').innerHTML = 
-    `<strong>Habilidades obtenidas:</strong><br>${cert.skills}`;
-  document.getElementById('modal-verification').innerHTML = cert.verification || '';
-  document.getElementById('certModal').style.display = 'block';
-}
-
-document.querySelector('.close').addEventListener('click', () => {
-  document.getElementById('certModal').style.display = 'none';
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target.id === 'certModal') {
-    document.getElementById('certModal').style.display = 'none';
-  }
-});
-
-// ========== NAVEGACIÓN SUAVE ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
+  window.addEventListener('scroll', () => {
+    btn.style.display = window.scrollY > 300 ? 'block' : 'none';
   });
-});
 
-document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const target = document.querySelector(this.getAttribute('data-target'));
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-// ========== ANIMACIÓN AL HACER SCROLL ==========
-function checkScroll() {
-  document.querySelectorAll('.section').forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if (sectionTop < window.innerHeight - 100) {
-      section.classList.add('visible');
-    }
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('load', () => {
+// Modo Oscuro (opcional)
+function initDarkMode() {
+  // Ya estás en modo oscuro, pero puedes agregar un toggle si lo deseas
+}
+
+// Validación de enlaces rotos (consola)
+function validateLinks() {
+  const links = document.querySelectorAll('a[href^="http"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (!link.href) {
+        e.preventDefault();
+        console.warn('Enlace inválido:', link);
+      }
+    });
+  });
+}
+
+// ========== INICIALIZACIÓN ==========
+document.addEventListener('DOMContentLoaded', () => {
+  // Renderizar contenido
   renderSkills();
   renderProjects();
   renderCertifications();
   renderContact();
-  checkScroll();
 
+  // Actualizar status
+  document.getElementById('progress-percent')?.textContent = config.progress.percent;
+  document.getElementById('projects-completed')?.textContent = config.progress.projects;
+
+  // Iniciar funcionalidades
+  initTerminal();
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+  initScrollToTop();
+  validateLinks();
+
+  // Eventos del modal
+  document.querySelector('.close')?.addEventListener('click', () => {
+    document.getElementById('certModal').style.display = 'none';
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target.id === 'certModal') {
+      document.getElementById('certModal').style.display = 'none';
+    }
+  });
+
+  // Navegación suave
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  });
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const target = document.querySelector(this.getAttribute('data-target'));
+      if (target) {
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+  });
 });
-
 
 
 
