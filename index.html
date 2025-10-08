@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Miguel Angel | Software Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Línea animada vertical -->
+  <div class="terminal-line"></div>
+
+  <!-- Header con menú de navegación -->
+  <header class="main-header">
+    <div class="logo">Miguel Angel</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-main">
+      <div class="hero-content">
+        <h1>Bienvenido. Próximamente seré certificado oficialmente como Software Developer</h1>
+        <p>Exmilitar peruano con disciplina, liderazgo y resolución de problemas bajo presión. Hoy, canalizo esa misma energía en el desarrollo de software, construyendo soluciones robustas, seguras y centradas en el usuario.</p>
+        <div class="hero-buttons">
+          <button class="btn" data-target="#projects">Ver Proyectos</button>
+          <button class="btn" data-target="#certs">Ver Certificaciones</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-sidebar-container">
+      <div class="hero-sidebar">
+        <!-- Contador de tiempo -->
+        <div class="countdown-container">
+          <div class="countdown-header">Tiempo hasta mi certificación oficial</div>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="countdown-number" id="days">00</span>
+              <span class="countdown-label">Días</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="hours">00</span>
+              <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="minutes">00</span>
+              <span class="countdown-label">Min</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number" id="seconds">00</span>
+              <span class="countdown-label">Seg</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal animado con efecto de escritura -->
+        <div class="terminal-panel">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-text" id="terminal-text">
+              <!-- El texto se escribe aquí dinámicamente -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Status de progreso -->
+        <div class="progress-status">
+          <div class="status-line">Progress: <span id="progress-percent">78</span>%</div>
+          <div class="status-line">Projects completed: <span id="projects-completed">3</span></div>
+          <div class="status-line">Status: <span class="status-active">Active</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Mi formación en las Fuerzas Especiales del Ejército del Perú me enseñó disciplina, liderazgo y resolución de problemas bajo presión. Hoy, aplico esas habilidades en el desarrollo de software, con un enfoque en código limpio, seguridad y escalabilidad.</p>
+          <p>Actualmente curso la carrera de <strong>Software Development</strong> en <strong>4Geeks Academy</strong>, donde aprendo tecnologías modernas como HTML, CSS, JavaScript, React, Python y bases de datos.</p>
+          <p>Mi objetivo: construir soluciones tecnológicas robustas, seguras y centradas en el usuario, llevando la mentalidad de ‘misión cumplida’ al mundo del código.</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/imagen/miguel.jpg.jpg" alt="Miguel Angel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid" id="skills-container">
+        <!-- Se llena con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <p>Explora mis proyectos personales y reales. Cada uno refleja mi compromiso con la calidad y la solución de problemas reales.</p>
+      <div class="projects-grid" id="projects-container">
+        <!-- Se llena con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Certifications -->
+  <section id="certs" class="section">
+    <div class="container">
+      <h2>Certifications</h2>
+      <p>Ordenadas de más reciente a más antigua. Haz clic en cualquier certificado para ver detalles.</p>
+      <div class="certs-grid" id="certs-container">
+        <!-- Se llena con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>¿Quieres trabajar conmigo? ¡Hablemos!</p>
+      <div class="contact-links" id="contact-links">
+        <!-- Se llena con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>© 2025 Miguel Angel | Software Developer</p>
+  </footer>
+
+  <!-- Modal para certificados -->
+  <div id="certModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title">Título del certificado</h3>
+      <div id="modal-details"></div>
+      <img id="modal-cert-image" class="modal-cert-image" src="" alt="Certificado">
+      <div id="modal-skills"></div>
+      <div id="modal-verification"></div>
+    </div>
+  </div>
+
+  <!-- Botón flotante de WhatsApp (circular con efecto) -->
+  <a href="https://wa.me/34602638653" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+    <span>Escríbeme</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
