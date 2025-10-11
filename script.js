@@ -136,7 +136,10 @@ const data = {
       title: "API Developer",
       issuer: "Edutin Academy",
       date: "octubre 2025",
-      image: "assets/certs/certificado_cursoO_JSON.jpg",
+      images: [
+        "assets/certs/certificado_cursoO_JSON.jpg",
+        "assets/certs/puntos_certificadojso"
+      ],
       skills: "Desarrollo de APIs, seguridad en APIs, pruebas y documentación, conectividad y estructura.",
       verification: "Nota: 91/100"
     },
@@ -512,4 +515,5 @@ document.addEventListener('click', (e) => {
   if (e.target.classList.contains('lang-btn')) {
     setLanguage(e.target.dataset.lang);
   }
+
 });
