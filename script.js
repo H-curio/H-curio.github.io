@@ -138,7 +138,7 @@ const data = {
       date: "octubre 2025",
       images: [
         "assets/certs/certificado_cursoO_JSON.jpg",
-        "assets/certs/puntos_certificadojso"
+        "assets/certs/puntos_certificadojso.jpg"
       ],
       skills: "Desarrollo de APIs, seguridad en APIs, pruebas y documentación, conectividad y estructura.",
       verification: "Nota: 91/100"
@@ -212,13 +212,6 @@ const data = {
       date: "noviembre 2015",
       image: "assets/certs/pc_leticia_basico_2015.jpg",
       skills: "Soldadura de microcomponentes, diagnóstico y reparación de placas, manejo de herramientas SMD."
-    },
-    {
-      title: "Servicio de Recepción",
-      issuer: "Ministerio de Educación - C.E.T.P.",
-      date: "17 de junio de 2014",
-      image: "assets/certs/servicio_recepcion_2014",
-      skills: "Protocolos de recepción, seguridad en eventos, atención al cliente."
     },
     {
       title: "Patrullas de Combate",
@@ -517,3 +510,4 @@ document.addEventListener('click', (e) => {
   }
 
 });
+
