@@ -138,7 +138,7 @@ const data = {
       date: "octubre 2025",
       images: [
         "assets/certs/certificado_cursoO_JSON.jpg",
-        "assets/certs/puntos_certificadojso.jpg"
+        "/certs/puntos_certificadojso.jpg"
       ],
       skills: "Desarrollo de APIs, seguridad en APIs, pruebas y documentación, conectividad y estructura.",
       verification: "Nota: 91/100"
@@ -510,4 +510,5 @@ document.addEventListener('click', (e) => {
   }
 
 });
+
 
