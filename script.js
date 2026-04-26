@@ -160,7 +160,7 @@ const data = {
     {
       title: "API Developer",
       issuer: "Edutin Academy",
-      date: "octubre 2025",
+      date: "9 octubre 2025",
       images: [
         "assets/certs/certificado_cursoO_JSON.jpg",
         "assets/certs/puntos_certificadojso.jpg"
