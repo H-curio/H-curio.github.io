@@ -133,6 +133,31 @@ const data = {
       verification: "ID: 634fb24a-e99c-4beb-a7b3-231202191d51<br><a href='https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/introduction-to-cybersecurity.html  ' target='_blank'>Verificar credencial</a>"
     },
     {
+      title: "Diseño y Experiencia de Usuario (UX)",
+      issuer: "Fundacion Romero -Perú",
+      date: "7 de Febrero de 2026",
+      image: "ux1.png",
+      skills: "User Experience (UX) fundamentals."
+    },
+
+    {
+      title: "Desing Thinking",
+      issuer: "UPC / Fundacion Romero -Perú",
+      date: "5 de Febrero de 2026",
+      image: "thinking.png",
+      skills: "Design Thinking Metodología enfocada en el usuario para generar soluciones innovadoras a través de ideación, empatía y prototipado rápido."
+    },
+    {
+      title: "js",
+      issuer: "Cisco / Js Institute ",
+      date: "29 de Diciembre de 2025",
+      image: [
+        "js.png",
+        "javascript-essentials-1.png"
+      ],
+      skills: "JavaScript (ES6+, DOM manipulation, async programming."
+    },
+    {
       title: "API Developer",
       issuer: "Edutin Academy",
       date: "octubre 2025",
@@ -253,8 +278,8 @@ const data = {
 
 // ========== CONFIGURACIÓN DINÁMICA ==========
 const config = {
-  bootcampStart: new Date('2024-09-01'),
-  certificationDate: new Date('2026-02-04')
+  bootcampStart: new Date('2026-02-01'),
+  certificationDate: new Date('2027-02-04')
 };
 
 function calculateProgress() {
@@ -452,9 +477,9 @@ function openModal(cert) {
   let currentIndex = 0;
 
   function updateCarousel() {
-  const slideWidth = track.querySelector('img')?.clientWidth || 600;
-  track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-}
+    const slideWidth = track.querySelector('img')?.clientWidth || 600;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
 
 
   document.querySelector('.carousel-btn.prev').onclick = () => {
@@ -472,14 +497,14 @@ function openModal(cert) {
 
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
   });
 });
 document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function () {
     const target = document.querySelector(this.getAttribute('data-target'));
     if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
   });
