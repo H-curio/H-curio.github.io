@@ -136,7 +136,7 @@ const data = {
       title: "Diseño y Experiencia de Usuario (UX)",
       issuer: "Fundacion Romero -Perú",
       date: "7 de Febrero de 2026",
-      image: "ux1.png",
+      image: "assets/certs/ux1.png",
       skills: "User Experience (UX) fundamentals."
     },
 
@@ -144,7 +144,7 @@ const data = {
       title: "Desing Thinking",
       issuer: "UPC / Fundacion Romero -Perú",
       date: "5 de Febrero de 2026",
-      image: "thinking.png",
+      image: "assets/certs/thinking.png",
       skills: "Design Thinking Metodología enfocada en el usuario para generar soluciones innovadoras a través de ideación, empatía y prototipado rápido."
     },
     {
@@ -152,8 +152,8 @@ const data = {
       issuer: "Cisco / Js Institute ",
       date: "29 de Diciembre de 2025",
       image: [
-        "js.png",
-        "javascript-essentials-1.png"
+        "assets/certs/js.png",
+        "assets/certs/javascript-essentials-1.png"
       ],
       skills: "JavaScript (ES6+, DOM manipulation, async programming."
     },
